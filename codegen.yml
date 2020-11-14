@@ -1,0 +1,22 @@
+overwrite: true
+generates:
+  src/schema/claims.ts:
+    schema:
+      - './src/resolver/claim/claims.graphql'
+    plugins:
+      - typescript
+    config:
+      declarationKind: 'interface'
+      avoidOptionals: true
+      maybeValue: T
+      skipTypename: true
+  src/schema/authenticate.ts:
+    schema:
+      - './src/resolver/authentication/authentication.graphql'
+    plugins:
+      - typescript
+    config:
+      declarationKind: 'interface'
+      avoidOptionals: true
+      maybeValue: T
+      skipTypename: true

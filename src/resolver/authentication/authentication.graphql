@@ -1,0 +1,12 @@
+input AuthenticateRequest {
+	username: String
+	password: String
+}
+
+type AuthenticateResponse {
+	jwtToken: String	
+}
+
+type Mutation {
+    authenticate(data: AuthenticateRequest): AuthenticateResponse
+}

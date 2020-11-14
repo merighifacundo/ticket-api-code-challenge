@@ -1,0 +1,32 @@
+input GetClaimRequest {
+	id: String
+}
+
+type ClaimResponse {
+	claimId: String
+	ticketId: String
+	status: String
+}
+
+input CreateClaimRequest {
+	ticketId: String
+}
+
+
+
+input UpdateClaimRequest {
+	claimId: String,
+	status: String
+}
+
+
+
+type Query {
+    getClaim(data: GetClaimRequest): ClaimResponse
+}
+
+
+type Mutation {
+    createClaim(data: CreateClaimRequest): ClaimResponse,
+		updateClaim(data: UpdateClaimRequest): ClaimResponse
+}
