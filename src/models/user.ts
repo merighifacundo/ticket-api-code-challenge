@@ -11,7 +11,7 @@ export enum Role {
 export class User extends Model<User> {
   @PrimaryKey
   @Column
-  userId!: string;
+  userId!: number;
 
   @Column
   username!: string;

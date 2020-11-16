@@ -18,6 +18,7 @@ export interface Claim {
   ticketId: Maybe<Scalars['String']>;
   status: Maybe<Scalars['String']>;
   description: Maybe<Scalars['String']>;
+  resolution: Maybe<Scalars['String']>;
 }
 
 export interface ClaimResponse {
@@ -26,6 +27,7 @@ export interface ClaimResponse {
 
 export interface CreateClaimRequest {
   ticketId: Maybe<Scalars['String']>;
+  description: Maybe<Scalars['String']>;
 }
 
 export interface UpdateClaimRequest {

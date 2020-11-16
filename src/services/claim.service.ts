@@ -8,6 +8,7 @@ export default class ClaimService {
       ticketId: claim.ticketId,
       status: ClaimStatus[claim.status],
       description: claim.description,
+      resolution: claim.resolution,
     };
   }
 }

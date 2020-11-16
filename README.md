@@ -4,6 +4,9 @@
 ## Code Challenge Instructions:
 [Code Challenge](CODECHALLENGE.md)
 
+## Graphql Queries and Mutations:
+[Graphql Queries and Mutations](GRAPHQLQUERIESANDMUTATIONS.md)
+
 ## Setup/Run Instructions
 
 ### Install dependencies
