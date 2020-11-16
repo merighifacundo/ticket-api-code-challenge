@@ -47,5 +47,24 @@
   }
 }`
 
+### Claim Get:
+
+`query{getClaim(data: {id: "16"}){ claim {claimId,status, description}}
+}`
+
+### Claim Get Response:
+
+`{
+  "data": {
+    "getClaim": {
+      "claim": {
+        "claimId": "16",
+        "status": "PENDING",
+        "description": "The flight was cancelled"
+      }
+    }
+  }
+}`
+
 
 
