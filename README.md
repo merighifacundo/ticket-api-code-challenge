@@ -2,7 +2,10 @@
 # Ticket API Middleware
 
 ## Code Challenge Instructions:
-[Code Challenge](CODE_CHALLENGE.md)
+[Code Challenge](CODECHALLENGE.md)
+
+## Graphql Queries and Mutations:
+[Graphql Queries and Mutations](GRAPHQLQUERIESANDMUTATIONS.md)
 
 ## Setup/Run Instructions
 
