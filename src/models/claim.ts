@@ -24,10 +24,10 @@ export class Claim extends Model<Claim> {
   ticketId!: string;
 
   @Column
-  status: ClaimStatus = ClaimStatus.PENDING;
+  status!: ClaimStatus;
 
   @Column
-  description: string = '';
+  description!: string;
 
   @Column
   resolution!: string;

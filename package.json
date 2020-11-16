@@ -22,7 +22,9 @@
     "generate": "graphql-codegen",
     "lint": "npx eslint --quiet --ext .ts ./ ",
     "lint:fix": "npx eslint --quiet --fix --ext .ts ./ ",
-    "test": "./node_modules/mocha/bin/mocha -r ts-node/register test/**/*-spec.ts"
+    "test": "./node_modules/mocha/bin/mocha -r ts-node/register test/**/*-spec.ts",
+    "util:create:password": "node -r ts-node/register -r esm utilities/create.password.ts"
+
   },
   "homepage": "https://github.com/merighifacundo/ticket-api-code-challenge#readme",
   "dependencies": {

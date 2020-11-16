@@ -1,5 +1,4 @@
-import jwt from 'jsonwebtoken';
-import UserService from '../../services/user.service';
+import AuthenticationService from '../../services/authentication.service';
 import {
   AuthenticateRequest,
   AuthenticateResponse,
@@ -11,12 +10,11 @@ export default async (
   params: any,
 ): Promise<AuthenticateResponse> => {
   const authenticateRequest: AuthenticateRequest = params.data;
-  const user: User = await UserService.authenticate(
+  const user: User = await AuthenticationService.authenticate(
     authenticateRequest.username,
     authenticateRequest.password,
   );
-  const jwtToken = await jwt.sign(user, 'ABCDEF', {
-    expiresIn: '10h',
-  });
+  const userInformation = {username: user.username, firstName: user.firstName, role: user.role  }
+  const jwtToken = await AuthenticationService.sign(userInformation)
   return { jwtToken };
 };

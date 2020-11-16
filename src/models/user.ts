@@ -14,10 +14,10 @@ export class User extends Model<User> {
   userId!: string;
 
   @Column
-  username: string = '';
+  username!: string;
 
   @Column
-  password: String = '';
+  password!: String;
 
   @Column
   role: Role = Role.CONSUMER;

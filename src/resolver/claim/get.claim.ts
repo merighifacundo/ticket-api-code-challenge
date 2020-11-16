@@ -4,8 +4,8 @@ import { Claim } from '../../models/claim';
 import { GetClaimRequest, ClaimResponse } from '../../schema/claims';
 import ClaimService from '../../services/claim.service';
 
-export default async (root:any, params:any):Promise<ClaimResponse> => {
-  console.log(root);
+export default async (root:any, params:any, context:any):Promise<ClaimResponse> => {
+  console.log(`Context: ${JSON.stringify(context)}`);
   const getClaimRequest:GetClaimRequest = params.data;
   const claimRepository = db.getRepository(Claim);
   console.log(`Getting an Claim with id: ${JSON.stringify(getClaimRequest)}`);
