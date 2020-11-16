@@ -8,7 +8,7 @@ const { schema } = glue('src/resolver', { mode: 'ts' });
 
 const schemaPublic: any = makeExecutableSchema({
   typeDefs: schema,
-  resolvers: [claimResolver, authenticationResolver]
+  resolvers: [claimResolver, authenticationResolver],
 });
 
 export default schemaPublic;

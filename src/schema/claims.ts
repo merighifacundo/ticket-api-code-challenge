@@ -13,10 +13,15 @@ export interface GetClaimRequest {
   id: Maybe<Scalars['String']>;
 }
 
-export interface ClaimResponse {
+export interface Claim {
   claimId: Maybe<Scalars['String']>;
   ticketId: Maybe<Scalars['String']>;
   status: Maybe<Scalars['String']>;
+  description: Maybe<Scalars['String']>;
+}
+
+export interface ClaimResponse {
+  claim: Maybe<Claim>;
 }
 
 export interface CreateClaimRequest {
@@ -26,14 +31,23 @@ export interface CreateClaimRequest {
 export interface UpdateClaimRequest {
   claimId: Maybe<Scalars['String']>;
   status: Maybe<Scalars['String']>;
+  resolution: Maybe<Scalars['String']>;
+}
+
+export interface ClaimsResponse {
+  claims: Maybe<Array<Maybe<Claim>>>;
 }
 
 export interface Query {
   getClaim: Maybe<ClaimResponse>;
+  getClaims: Maybe<ClaimsResponse>;
 }
 
-
 export interface QueryGetClaimArgs {
+  data: Maybe<GetClaimRequest>;
+}
+
+export interface QueryGetClaimsArgs {
   data: Maybe<GetClaimRequest>;
 }
 
@@ -42,11 +56,9 @@ export interface Mutation {
   updateClaim: Maybe<ClaimResponse>;
 }
 
-
 export interface MutationCreateClaimArgs {
   data: Maybe<CreateClaimRequest>;
 }
-
 
 export interface MutationUpdateClaimArgs {
   data: Maybe<UpdateClaimRequest>;

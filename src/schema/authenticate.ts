@@ -22,7 +22,6 @@ export interface Mutation {
   authenticate: Maybe<AuthenticateResponse>;
 }
 
-
 export interface MutationAuthenticateArgs {
   data: Maybe<AuthenticateRequest>;
 }

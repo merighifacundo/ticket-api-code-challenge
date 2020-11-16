@@ -2,10 +2,15 @@ input GetClaimRequest {
 	id: String
 }
 
-type ClaimResponse {
+type Claim {
 	claimId: String
 	ticketId: String
 	status: String
+	description: String
+}
+
+type ClaimResponse {
+	claim: Claim
 }
 
 input CreateClaimRequest {
@@ -16,13 +21,17 @@ input CreateClaimRequest {
 
 input UpdateClaimRequest {
 	claimId: String,
-	status: String
+	status: String,
+	resolution: String
 }
 
-
+type ClaimsResponse {
+	claims: [Claim]
+}
 
 type Query {
     getClaim(data: GetClaimRequest): ClaimResponse
+		getClaims(data: GetClaimRequest): ClaimsResponse
 }
 
 
