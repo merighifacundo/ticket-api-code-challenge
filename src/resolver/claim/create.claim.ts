@@ -10,11 +10,11 @@ export default async (
   context: any,
 ): Promise<ClaimResponse> => {
   console.log(root);
+  const createClaimRequest: CreateClaimRequest = params.data;
   if (!context.user) {
     throw new ApolloError('A claim must be originated by an user.');
   }
   const { username } = context.user;
-  const createClaimRequest: CreateClaimRequest = params.data;
   const customer = await User.findOne({ where: { username } });
   if (!customer) {
     throw new ApolloError('A claim must be originated by an user.');

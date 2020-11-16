@@ -3,7 +3,7 @@ import {
   AuthenticateRequest,
   AuthenticateResponse,
 } from '../../schema/authenticate';
-import { User } from '../../models/user';
+import { Role, User } from '../../models/user';
 
 export default async (
   root: any,
@@ -14,7 +14,13 @@ export default async (
     authenticateRequest.username,
     authenticateRequest.password,
   );
-  const userInformation = { username: user.username, firstName: user.firstName, role: user.role };
+  console.log(user);
+  const userInformation = {
+    username: user.username,
+    firstName: user.firstName,
+    role: Role[user.role],
+  };
+  console.log(userInformation);
   const jwtToken = await AuthenticationService.sign(userInformation);
   return { jwtToken };
 };

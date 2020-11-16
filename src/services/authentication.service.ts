@@ -14,6 +14,7 @@ export default class AuthenticationService {
   public static async authenticate(username, password) : Promise<User> {
     const repository = db.getRepository(User);
     const user = await repository.findOne({ where: { username } });
+    console.log(user);
     if (!user) {
       throw new ApolloError('Invalid Credentials', 'INV_CRED');
     }

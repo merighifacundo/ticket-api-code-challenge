@@ -3,8 +3,8 @@ import {
 } from 'sequelize-typescript';
 
 export enum Role {
-  ADMIN,
-  CONSUMER,
+  ADMIN = 0,
+  CONSUMER = 1,
 }
 
 @Table
@@ -20,7 +20,7 @@ export class User extends Model<User> {
   password!: String;
 
   @Column
-  role: Role = Role.CONSUMER;
+  role!: Role;
 
   @Column
   firstName!: string;
