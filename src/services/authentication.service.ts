@@ -1,8 +1,8 @@
 import * as bcrypt from 'bcryptjs';
 import { ApolloError } from 'apollo-server';
+import jwt from 'jsonwebtoken';
 import { User } from '../models/user';
 import db from '../dao/connection';
-import jwt from 'jsonwebtoken';
 
 export interface UserInformation {
   username:string,
@@ -29,12 +29,13 @@ export default class AuthenticationService {
       expiresIn: '10h',
     });
   }
+
   public static async getLoggedUser(authorization:string | undefined) {
     if (!authorization) {
       return null;
     }
     try {
-      const userInformation =  await jwt.verify(authorization, 'ABCDEF');
+      const userInformation = await jwt.verify(authorization, 'ABCDEF');
       return userInformation;
     } catch (error) {
       console.log('error verifying the token');

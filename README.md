@@ -2,7 +2,7 @@
 # Ticket API Middleware
 
 ## Code Challenge Instructions:
-[Code Challenge](CODE_CHALLENGE.md)
+[Code Challenge](CODECHALLENGE.md)
 
 ## Setup/Run Instructions
 

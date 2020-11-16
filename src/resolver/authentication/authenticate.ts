@@ -14,7 +14,7 @@ export default async (
     authenticateRequest.username,
     authenticateRequest.password,
   );
-  const userInformation = {username: user.username, firstName: user.firstName, role: user.role  }
-  const jwtToken = await AuthenticationService.sign(userInformation)
+  const userInformation = { username: user.username, firstName: user.firstName, role: user.role };
+  const jwtToken = await AuthenticationService.sign(userInformation);
   return { jwtToken };
 };

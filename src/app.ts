@@ -11,7 +11,9 @@ const server = new ApolloServer({
   schema: schemaPublic,
   uploads: false,
   // Create a GraphQL context that contains the HTTP authorization header
-  context: async ({ req }) => ({ user: await AuthenticationService.getLoggedUser(req.headers.authorization) }),
+  context: async ({ req }) => ({
+    user: await AuthenticationService.getLoggedUser(req.headers.authorization),
+  }),
 });
 server.applyMiddleware({ app });
 
